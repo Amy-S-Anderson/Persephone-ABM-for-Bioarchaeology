@@ -382,8 +382,10 @@ generate_output_directory(params)
 The simulated data for the first set of parameter values (relative mortality risk = 1) will be saved in this named folder.    
 
 
-```{r}
+```{r, results='hide'} 
+# (hide results because once the directory structure for the simulated data already exists, this function has a safety catch that produces hundreds of repeated warnings about skipping each directory name to avoid overwriting the data that are already in there.)
 # run the model with scenarios for risk-free lesions (relative_mortality_risk = 1) and risk-doubling lesions (relative_mortality_risk = 2)
+
  run_model_sweep(params,
                root_output_directory = generate_output_directory(params),
                target_param = "relative_mortality_risk",
@@ -595,11 +597,11 @@ Figure_3 <- plot_grid(barplots, legend, ncol = 1, rel_heights = c(1, 0.05))
 
 
 # Save the plot as Figure 3
-ggsave(filename = paste0(here("Known Unknowns", "Figures"), "/Figure_3.pdf"), 
-  plot = Figure_3, 
-  width = 140,
-  units = "mm",
-  dpi = 1200)
+# ggsave(filename = paste0(here("Known Unknowns", "Figures"), "/Figure_3.pdf"), 
+#   plot = Figure_3, 
+#   width = 140,
+#   units = "mm",
+#   dpi = 1200)
 
 # View Figure 3
 Figure_3
@@ -694,11 +696,11 @@ Figure_4 <- plot_grid(plots_4A_4B, plot_4C, ncol = 1,
 
 
 # Save the plot as Figure 4
-ggsave(filename = paste0(here("Known Unknowns", "Figures"), "/Figure_4.pdf"), 
-  plot = Figure_4, 
-  width = 140,
-  units = "mm",
-  dpi = 1200)
+# ggsave(filename = paste0(here("Known Unknowns", "Figures"), "/Figure_4.pdf"), 
+#   plot = Figure_4, 
+#   width = 140,
+#   units = "mm",
+#   dpi = 1200)
 
 
 
@@ -766,11 +768,11 @@ Figure_S2 <- plot_grid(S2A, S2B,
           ncol = 2, labels = "AUTO")
 
 # Save the plot as Figure S2
-ggsave(filename = paste0(here("Known Unknowns", "Figures"), "/Figure_S2.pdf"), 
-  plot = Figure_S2, 
-  width = 140,
-  units = "mm",
-  dpi = 1200)
+# ggsave(filename = paste0(here("Known Unknowns", "Figures"), "/Figure_S2.pdf"), 
+#   plot = Figure_S2, 
+#   width = 140,
+#   units = "mm",
+#   dpi = 1200)
 
 ```
   
@@ -962,13 +964,13 @@ Figure_5 <- plot_grid(risk_free_survival, risk_2x_survival, ncol = 1)
 # ---------------------------
 # 5. Save with fixed width
 # ---------------------------
-ggsave(
-  filename = here("Known Unknowns", "Figures", "Figure_5.pdf"),
-  plot = Figure_5,
-  width = 190,  # mm
-  units = "mm",
-  dpi = 1200
-)
+# ggsave(
+#   filename = here("Known Unknowns", "Figures", "Figure_5.pdf"),
+#   plot = Figure_5,
+#   width = 190,  # mm
+#   units = "mm",
+#   dpi = 1200
+# )
 
 Figure_5
 ```
