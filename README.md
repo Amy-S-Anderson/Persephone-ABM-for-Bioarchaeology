@@ -33,7 +33,7 @@ The model parameters can be varied, and the model is easily adjusted to incorpor
 Statistical analyses on the simulated cemetery data are currently limited to Kaplan Meier survival analysis (individuals with lesions vs. without lesions).
 
 
-1. To **load the model and run the analysis in the main text of the paper**, run the file `Known Unknowns/Main_Analysis.Rmd` (or alternatively download and view the Main_Analysis.html file). 
+1. To **load the model and run the analysis in the main text of the Known Unknowns paper**, run the file `Known Unknowns/Main_Analysis.Rmd` (or alternatively download and view the Main_Analysis.html file). 
    This produces simulated cohort and corresponding cemetery data for a 1,000-person cohort in which:
    - Individuals experience a 5% annual probability of developing a skeletal lesion between the ages of 0 and 9.
    - Cohort mortality follows the mortality regime of the Coale and Demeny West model life table for females, Level 5.
