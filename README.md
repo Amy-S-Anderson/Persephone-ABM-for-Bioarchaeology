@@ -6,7 +6,7 @@ An agent-based model for exploring hidden variables in bioarchaeology
 
 This paper (and repository) introduces the **Persephone model** for Bioarchaeology. 
 
-Named for the character in Greek mythology who spent half her year in the land of the living with her mother, the goddess of fertility, and the other half of her year in the land of the dead as the queen of the underworld, the Persephone model allows the user to:  
+Named for the character in Greek mythology who spends half of each year in the land of the living with her mother, the goddess of fertility, and the other half of her year in the land of the dead as the queen of the underworld, the Persephone model allows the user to:  
 
   * Specify the size of a living cohort of individuals who are born when the simulation starts.
   * Specify their age-dependent risks of encountering an experience that causes a skeletal lesion.
