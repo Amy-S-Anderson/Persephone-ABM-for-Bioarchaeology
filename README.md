@@ -16,7 +16,7 @@ Named for the character in Greek mythology who spends half of each year in the l
   * Repeat this process with a new cohort.
 
 The agent-based model (ABM) in the `Model_Core_Simulate_Cemetery.R` file generates a cohort of individuals (user specifies cohort size) at age 0 who are exposed to an annual probability of developing a skeletal lesion and an annual probability of dying. The ages at which a skeletal lesion might develop are specified by the user, as is the annual hazard of dying (specified as a named Siler function). 
-The ABM produces two data sets: one that specifies the age and lesion status (present/absent) of every living individual in the cohort in each year of model time, and one that specifies the age at death and lesion status of every individual in the cohort. This second data set is effectively a bioarchaeological data set from a simulated cemetery. 
+The ABM produces two data sets: one that includes the number of survivors and the percent of survivors with a skeletal lesion in each year of the model run, and one that includes the age at death and lesion status of every individual in the cohort. This second data set is effectively a paleopathological data set from a simulated cemetery. 
 
 
 
