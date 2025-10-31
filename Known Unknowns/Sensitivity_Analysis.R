@@ -114,11 +114,11 @@ CoaleDemenyWestF21 <- data.frame(
 
 
 #### Load Anderson's agent-based model ####
-source(here("Model_Core_Simulate_Cemetery.R")) # <- See this file for model details. 
+source(here("Known Unknowns/Model_Core_Simulate_Cemetery.R")) # <- See this file for model details. 
 #### and functions for running and reading a model sweep ####
-source(here("Sweep_Utility_Functions.R"))
+source(here("Known Unknowns/Sweep_Utility_Functions.R"))
 #### and functions plotting results of model sweep ####
-source(here("Sweep_Plotting_Functions.R"))
+source(here("Known Unknowns/Sweep_Plotting_Functions.R"))
 
 
 
