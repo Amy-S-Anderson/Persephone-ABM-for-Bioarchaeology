@@ -889,12 +889,13 @@ survival_adults2 <- run_survival_analysis(sim_data %>% filter(relative_risk == 2
 # 2. Apply the theme to each plot
 # ---------------------------
 
+linetypes <- c(1342, "solid")
 rmr1_survival_curve <- survival_data1$survival_data %>%
   filter(rep == 1) %>%
   ggplot(aes(x = time, y = survival)) +
-  geom_line(aes(group = group, color = group), linewidth = 1) +
-  scale_color_manual(values = c('black', 'grey'), labels = c("Lesion Absent", "Lesion Present")) +
-    labs(color = "", x = "Age (years)", y = "Proportion of group surviving") +
+  geom_line(aes(group = group, linetype = group), linewidth = 1) +
+  scale_linetype_manual(values = linetypes, labels = c("Lesion Absent", "Lesion Present")) +
+    labs(linetype = "", x = "Age (years)", y = "Proportion of group surviving") +
   ggtitle(label = "Risk-Free Skeletal Lesions: All Ages",
           subtitle = "Includes ages within the lesion's developmental window") +
   plot_theme
@@ -903,31 +904,29 @@ rmr1_survival_curve <- survival_data1$survival_data %>%
 rmr2_survival_curve <- survival_data2$survival_data %>%
   filter(rep == 1) %>%
   ggplot(aes(x = time, y = survival)) +
-  geom_line(aes(group = group, color = group), linewidth = 1) +
-  scale_color_manual(values = c('#AA0144', '#FF64DC'), labels = c("Lesion Absent", "Lesion Present")) +
-  labs(color = "", x = "Age (years)", y = "Proportion of group surviving") +
+  geom_line(aes(group = group, linetype = group), color = 'magenta', linewidth = 1) +
+  scale_linetype_manual(values = linetypes, labels = c("Lesion Absent", "Lesion Present")) +
+    labs(linetype = "", x = "Age (years)", y = "Proportion of group surviving") +
   ggtitle(label = "Risk-Doubling Skeletal Lesions: All Ages",
                    subtitle = "Includes ages within the lesion's developmental window") +
   plot_theme
 
-rmr1_adults_curve <- survival_data1$survival_data %>%
+rmr1_adults_curve <- survival_adults1$survival_data %>%
   filter(rep == 1) %>%
   ggplot(aes(x = time, y = survival)) +
-  geom_line(aes(group = group, color = group), linewidth = 1) +
-  scale_color_manual(values = c('black', 'grey'),
-                     labels = c("Lesion Absent", "Lesion Present")) +
-  labs(color = "", x = "Age (years)", y = "Proportion of group surviving") +
+  geom_line(aes(group = group, linetype = group), linewidth = 1) +
+  scale_linetype_manual(values = linetypes, labels = c("Lesion Absent", "Lesion Present")) +
+    labs(linetype = "", x = "Age (years)", y = "Proportion of group surviving") +
   ggtitle(label = "Risk-Free Skeletal Lesions: Ages 10+",
           subtitle = "Excludes ages within the lesion's developmental window") +
   plot_theme
 
-rmr2_adults_curve <- survival_data2$survival_data %>%
+rmr2_adults_curve <- survival_adults2$survival_data %>%
   filter(rep == 1) %>%
   ggplot(aes(x = time, y = survival)) +
-  geom_line(aes(group = group, color = group), linewidth = 1) +
-  scale_color_manual(values = c('#AA0144', '#FF64DC'),
-                     labels = c("Lesion Absent", "Lesion Present")) +
-  labs(color = "", x = "Age (years)", y = "Proportion of group surviving") +
+  geom_line(aes(group = group, linetype = group), color = 'magenta', linewidth = 1) +
+  scale_linetype_manual(values = linetypes, labels = c("Lesion Absent", "Lesion Present")) +
+    labs(linetype = "", x = "Age (years)", y = "Proportion of group surviving") +
   ggtitle(label = "Risk-Doubling Skeletal Lesions: Ages 10+",
           subtitle = "Excludes ages within the lesion's developmental window") +
   plot_theme
