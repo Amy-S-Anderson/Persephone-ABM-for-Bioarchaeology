@@ -835,7 +835,25 @@ run_survival_analysis <- function(sweep_data) {
       lesion_formation_rate = combo$lesion_formation_rate,
       rep = combo$rep
     )
+    # Identify groups in this combination
+    groups <- names(fit$strata)
     
+    # For each group, add a row time=0, survival=1
+    initial_rows <- lapply(groups, function(g) {
+      data.frame(
+        time = 0,
+        survival = 1,
+        group = g,
+        mortality = combo$mortality,
+        lesion_formation_rate = combo$lesion_formation_rate,
+        rep = combo$rep,
+        stringsAsFactors = FALSE
+      )
+    }) |> bind_rows()
+    
+    # Combine initial rows with the actual survival data
+    surv_df <- bind_rows(initial_rows, surv_df) %>%
+      arrange(group, time)
     survival_data_list[[i]] <- surv_df
     
     # Perform log-rank test
